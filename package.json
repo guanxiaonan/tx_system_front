@@ -28,6 +28,7 @@
     "iview": "^2.7.3",
     "iview-area": "^1.5.11",
     "js-cookie": "^2.2.0",
+    "ora": "^3.0.0",
     "quill-image-drop-module": "^1.0.3",
     "quill-image-resize-module": "^3.0.0",
     "rasterizehtml": "^1.2.4",

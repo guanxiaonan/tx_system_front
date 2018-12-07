@@ -5,7 +5,7 @@ module.exports = {
     // 构建产品时使用的配置
     build: {
         // 环境变量
-        env: require('./prod.env'),
+        env: require('../build/webpack.prod.config'),
         // html入口文件
         index: path.resolve(__dirname, '../dist/index.html'),
         // 产品文件的存放路径
@@ -35,7 +35,7 @@ module.exports = {
     // 开发过程中使用的配置
     dev: {
         // 环境变量
-        env: require('./dev.env'),
+        // env: require('./dev.env'),
         // dev-server监听的端口
         port: 8080,
         // 是否自动打开浏览器

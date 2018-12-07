@@ -2,15 +2,18 @@ var path = require('path')
 var config = require('../config')
 // extract-text-webpack-plugin可以提取bundle中的特定文本，将提取后的文本单独存放到另外的文件
 // 这里用来提取css样式
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // 资源文件的存放路径
 exports.assetsPath = function (_path) {
+    console.log(111111111);
+
     var assetsSubDirectory = process.env.NODE_ENV === 'production'
         ? config.build.assetsSubDirectory
-        : config.dev.assetsSubDirectory
+        : config.dev.assetsSubDirectory;
+
     return path.posix.join(assetsSubDirectory, _path)
-}
+};
 
 // 生成css、sass、scss等各种用来编写样式的语言所对应的loader配置
 exports.cssLoaders = function (options) {

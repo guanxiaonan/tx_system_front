@@ -1,3 +1,5 @@
+// var config = require('../config');
+var utils = require('./utils');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -13,14 +15,18 @@ const package = require('../package.json');
 
 fs.open('./build/env.js', 'w', function(err, fd) {
     const buf = 'export default "production";';
+    console.log("测试");
     fs.write(fd, buf, 0, buf.length, 0, function(err, written, buffer) {});
+    console.log(222222222222222222222222222)
 });
 
 module.exports = merge(webpackBaseConfig, {
     output: {
         publicPath: 'https://iview.github.io/iview-admin/dist/',  // 修改 https://iv...admin 这部分为你的服务器域名
-        filename: '[name].[hash].js',
-        chunkFilename: '[name].[hash].chunk.js'
+        // filename: '[name].[chunkhash].js',
+        // chunkFilename: '[name].[chunkhash].chunk.js'
+        filename: utils.assetsPath('js/[name].[chunkhash].js'),
+        chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
     },
     plugins: [
         new cleanWebpackPlugin(['dist/*'], {
@@ -77,7 +83,7 @@ module.exports = merge(webpackBaseConfig, {
         new HtmlWebpackPlugin({
             title: 'iView admin v' + package.version,
             favicon: './td_icon.ico',
-            filename: '../index.html',
+            filename: 'index.html',
             template: './src/template/index.ejs',
             inject: false
         })
