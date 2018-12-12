@@ -22,7 +22,6 @@ console.log(
 
 var spinner = ora('building for production...');
 spinner.start(); // 开启loading动画
-
 // 首先将整个dist文件夹以及里面的内容删除，以免遗留旧的没用的文件
 // 删除完成后才开始webpack构建打包
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {

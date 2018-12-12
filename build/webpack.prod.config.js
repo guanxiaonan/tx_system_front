@@ -13,12 +13,12 @@ const fs = require('fs');
 const path = require('path');
 const package = require('../package.json');
 
-fs.open('./build/env.js', 'w', function(err, fd) {
-    const buf = 'export default "production";';
-    console.log("测试");
-    fs.write(fd, buf, 0, buf.length, 0, function(err, written, buffer) {});
-    console.log(222222222222222222222222222)
-});
+// fs.open('./build/env.js', 'w', function(err, fd) {
+//     const buf = 'export default "production";';
+//     console.log("测试");
+//     fs.write(fd, buf, 0, buf.length, 0, function(err, written, buffer) {});
+//     console.log(222222222222222222222222222)
+// });
 
 module.exports = merge(webpackBaseConfig, {
     output: {
@@ -85,7 +85,9 @@ module.exports = merge(webpackBaseConfig, {
             favicon: './td_icon.ico',
             filename: 'index.html',
             template: './src/template/index.ejs',
-            inject: false
-        })
+            inject: true,
+            chunksSortMode: 'dependency'
+        }),
+
     ]
 });

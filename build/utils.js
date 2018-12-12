@@ -8,10 +8,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 exports.assetsPath = function (_path) {
     console.log(111111111);
 
-    var assetsSubDirectory = process.env.NODE_ENV === 'production'
-        ? config.build.assetsSubDirectory
-        : config.dev.assetsSubDirectory;
-
+    // var assetsSubDirectory = process.env.NODE_ENV === 'production'
+    //     ? config.build.assetsSubDirectory
+    //     : config.dev.assetsSubDirectory;
+    var assetsSubDirectory = 'static'
     return path.posix.join(assetsSubDirectory, _path)
 };
 

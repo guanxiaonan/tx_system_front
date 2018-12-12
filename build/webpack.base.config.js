@@ -15,9 +15,18 @@ module.exports = {
         'vender-base': '@/vendors/vendors.base.js',
         'vender-exten': '@/vendors/vendors.exten.js'
     },
+    // output: {
+    //     path: path.resolve(__dirname, '../dist/dist'),
+    // },
+
     output: {
-        path: path.resolve(__dirname, '../dist/dist')
+        path: path.resolve(__dirname, './dist'),
+        filename: '[name].js',
     },
+
+
+
+
     module: {
         rules: [
             {

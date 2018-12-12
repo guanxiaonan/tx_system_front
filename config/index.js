@@ -16,7 +16,9 @@ module.exports = {
         // 设置之后构建的产品文件在注入到index.html中的时候就会带上这里的发布路径
         assetsPublicPath: './',
         // 是否使用source-map
-        productionSourceMap: true,
+        // productionSourceMap: true,
+        productionSourceMap: false,
+
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.
         // Before setting to `true`, make sure to:
